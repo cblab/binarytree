@@ -2,5 +2,5 @@
 namespace BinaryTree;
 
 interface ItemInterface {
-    public function getValue(): string;
+    public function getValue(): int;
 }

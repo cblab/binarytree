@@ -4,7 +4,7 @@ namespace BinaryTree;
 final class Item implements ItemInterface {
     
     /**
-     * @var string value
+     * @var int value
      */
     private $value;
     
@@ -18,7 +18,7 @@ final class Item implements ItemInterface {
     /**
      * @return string
      */
-    public function getValue(): string {
+    public function getValue(): int {
         return $this->value;
     }
 }

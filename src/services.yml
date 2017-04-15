@@ -3,7 +3,7 @@
 parameters:
 
   ## arguments for Item
-  value: '0'
+  value: 555
   
 services:
 
@@ -15,4 +15,8 @@ services:
   ## a binary tree node
   binarynode:
     class: \BinaryTree\BinaryNode
-    arguments: ['@Item']
+    arguments: ['@item']
+    
+  ## a binary tree
+  binarytree:
+    class: \BinaryTree\BinaryTree
