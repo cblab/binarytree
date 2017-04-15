@@ -11,5 +11,5 @@ foreach($item_values as $item_value) {
     $binary_tree->insertItem($item);
 }
 
-error_log(json_encode($queue));
+error_log(json_encode($binary_tree));
 //$binary_tree->printTree();
