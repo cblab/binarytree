@@ -1,5 +1,5 @@
 <?php
-namespace BinaryTree;
+namespace Tree;
 
 final class BinaryNode {
     public $value;    // contains the node item

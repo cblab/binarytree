@@ -1,5 +1,5 @@
 <?php
-namespace BinaryTree;
+namespace Tree;
 
 final class BinaryTree implements BinaryTreeInterface {
     protected $root; // the root node of our tree
@@ -18,7 +18,7 @@ final class BinaryTree implements BinaryTreeInterface {
      * @param type $item some item
      */
     public function insertItem(Item $item) {
-        $node = new BinaryNode($item->getValue());
+        $node = new BinaryNode($item);
         if ($this->isEmpty()) {
             // special case if tree is empty
             $this->root = $node;
@@ -34,7 +34,7 @@ final class BinaryTree implements BinaryTreeInterface {
      * @param \BinaryTree\BinaryNode $node
      * @param \BinaryTree $subtree
      */
-    public function insertNode(BinaryNode $node, \BinaryTree &$subtree) {
+    protected function insertNode(BinaryNode $node, BinaryNode &$subtree=null) {
         if ($subtree === null) {
             // insert node here if subtree is empty
             $subtree = $node;

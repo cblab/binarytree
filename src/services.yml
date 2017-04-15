@@ -9,14 +9,14 @@ services:
 
   ## an item 
   item:
-    class: \BinaryTree\Item
+    class: \Tree\Item
     arguments: ['%value%']
 
   ## a binary tree node
   binarynode:
-    class: \BinaryTree\BinaryNode
+    class: \Tree\BinaryNode
     arguments: ['@item']
     
   ## a binary tree
   binarytree:
-    class: \BinaryTree\BinaryTree
+    class: \Tree\BinaryTree

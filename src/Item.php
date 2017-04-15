@@ -1,5 +1,5 @@
 <?php
-namespace BinaryTree;
+namespace Tree;
 
 final class Item implements ItemInterface {
     
@@ -20,5 +20,12 @@ final class Item implements ItemInterface {
      */
     public function getValue(): int {
         return $this->value;
+    }
+    
+    /**
+     * @param int $value
+     */
+    public function setValue($value) {
+        $this->value = $value;
     }
 }
