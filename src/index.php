@@ -2,18 +2,14 @@
 require __DIR__ . '/../vendor/autoload.php';
 require 'container.php';
 
-$item = $container->get('item');
+$item_values  = $container->getParameter('binary.tree');
+$item_factory = $container->get('factory.itemfactory');
+$binary_tree  = $container->get('binarytree');
 
-/**
- * @var $binary_tree \Tree\BinaryTree
- */
-$binary_tree = $container->get('binarytree');
-$binary_tree->insertItem($item);
+foreach($item_values as $item_value) {
+    $item = $item_factory->createItem($item_value);
+    $binary_tree->insertItem($item);
+}
 
-$item->setValue(111);
-$binary_tree->insertItem($item);
-
-$item->setValue(222);
-$binary_tree->insertItem($item);
-
-var_dump($binary_tree);
+error_log(json_encode($queue));
+//$binary_tree->printTree();

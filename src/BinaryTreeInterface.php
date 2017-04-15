@@ -4,7 +4,7 @@ namespace Tree;
 interface BinaryTreeInterface {
     /**
      * 
-     * @param \BinaryTree\Item $item
+     * @param \Tree\Factory\Item $item
      */
-    public function insertItem(Item $item);
+    public function insertItem(\Tree\Factory\Item $item);
 }

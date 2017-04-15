@@ -1,5 +1,5 @@
 <?php
-namespace Tree;
+namespace Tree\Factory;
 
 final class Item implements ItemInterface {
     

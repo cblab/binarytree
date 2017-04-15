@@ -9,7 +9,7 @@ final class BinaryNode {
     /**
      * @param \BinaryTree\Item $item
      */
-    public function __construct(Item $item) {
+    public function __construct(\Tree\Factory\Item $item) {
         $this->value = $item->getValue();
         // new nodes are leaf nodes
         $this->left = null;
