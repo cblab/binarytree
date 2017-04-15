@@ -8,7 +8,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "BinaryTree\\": "src/" }
+        "psr-4": { "Tree\\": "src/" }
     },
     "require": {
         "symfony/dependency-injection": "^3.2",
