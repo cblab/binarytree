@@ -54,24 +54,20 @@ final class BinaryTree implements BinaryTreeInterface {
     }
     
     public function traverseInOrder() {
-        //print_r($this->root);
         $this->root->traverseInOrder();
     }
     
     public function traversePreOrder() {
-        //print_r($this->root);
         $this->root->traversePreOrder();
     }
     
     public function traversePostOrder() {
-        //print_r($this->root);
         $this->root->traversePostOrder();
     }
     
     public function breadthFirstSearch() {
         $this->root->breadthFirstSearch();
     }
-    
     
     public function printTree() {
         
