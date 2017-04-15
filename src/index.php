@@ -11,5 +11,14 @@ foreach($item_values as $item_value) {
     $binary_tree->insertItem($item);
 }
 
-error_log(json_encode($binary_tree));
-//$binary_tree->printTree();
+echo "traverseInOrder:" . PHP_EOL;
+$binary_tree->traverseInOrder();
+
+echo "traversePreOrder:" . PHP_EOL;
+$binary_tree->traversePreOrder();
+
+echo "traversePostOrder:" . PHP_EOL;
+$binary_tree->traversePostOrder();
+
+echo "breadthFirstSearch:" . PHP_EOL;
+$binary_tree->breadthFirstSearch();

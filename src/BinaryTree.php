@@ -53,6 +53,26 @@ final class BinaryTree implements BinaryTreeInterface {
         }
     }
     
+    public function traverseInOrder() {
+        //print_r($this->root);
+        $this->root->traverseInOrder();
+    }
+    
+    public function traversePreOrder() {
+        //print_r($this->root);
+        $this->root->traversePreOrder();
+    }
+    
+    public function traversePostOrder() {
+        //print_r($this->root);
+        $this->root->traversePostOrder();
+    }
+    
+    public function breadthFirstSearch() {
+        $this->root->breadthFirstSearch();
+    }
+    
+    
     public function printTree() {
         
         if ($this->root == null) {
@@ -61,30 +81,54 @@ final class BinaryTree implements BinaryTreeInterface {
         
         $queue = [$this->root];
         
-            while (!empty($queue)) {
-                    $size = count($queue);
+        $level = 1;
+        while (!empty($queue)) {
+                foreach ($queue as $index => $node) {
                     
-                    error_log(json_encode($queue));
+                    $tab_base = (int) ((3 / $level * 3) * 0.5 ) + 10;
+                    $tab = str_repeat(" ", $tab_base);
+                    $half_tab = str_repeat(" ", $tab_base / 2);
                     
-                    for ($i = 0; $i < $size; $i++) {
-                        
-                            $node = $queue[$i];
-                            unset($queue[$i]);
-                            echo $node->value . " ";
-                            
-                            if ($node->left != null) {
-                                    array_push($queue, $node->left);
-                            }
-                            
-                            if ($node->right != null) {
-                                    array_push($queue, $node->right);
-                            }
-                            
-                            echo "\n";
-                            
-                            die();
-                            
+                    if ($level == 1) {
+                        echo $half_tab . $tab . $node->value;
+                    } else {
+                        echo $tab . $node->value;
                     }
-            }
+                    
+                    $left = $right = false;
+                    if ($node->left != null) { 
+                            $queue[] = $node->left;
+                            $left = true;
+                    }
+
+                    if ($node->right != null) {
+                            $queue[] = $node->right;
+                            $right = true;
+                    }
+                    
+                    if ($left || $right) {
+                        echo PHP_EOL;
+                        $queue = array_values($queue);
+                        
+                        if ($left) {
+                            echo $tab . "/";
+                       }
+                        
+                        if ($right) {
+                            echo $half_tab . $tab . "\\";
+                        }
+                    }
+                    
+                    foreach ($queue as $test_index => $test_node) {
+                        if($node->value == $test_node->value) {
+                            unset($queue[$test_index]);
+                        }
+                    }
+                    
+                }
+                
+                echo PHP_EOL;
+                $level++;
+        }
     }
 }
